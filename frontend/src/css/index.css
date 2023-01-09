@@ -1,0 +1,9 @@
+html {
+  overflow-y: scroll;
+}
+body {
+  margin: 0;
+  overflow-y: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
