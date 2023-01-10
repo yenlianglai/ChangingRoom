@@ -11,7 +11,7 @@ const Header = () => {
         <img
           src={logo}
           style={{
-            width: "200px",
+            width: "150%",
             aspectRatio: "1/2",
             position: "absolute",
             top: "-9999px",
@@ -42,14 +42,15 @@ const Header = () => {
 };
 
 const HeaderContainerStyle = {
+  padding: "0 20px",
   position: "relative",
   display: "flex",
   alignItems: "flex-end",
 };
 
 const ImgContainerStyle = {
-  width: "150px",
-  height: "150px",
+  width: "13vh",
+  height: "13vh",
   // border: "red solid 2px",
   position: "relative",
   overflow: "hidden",
