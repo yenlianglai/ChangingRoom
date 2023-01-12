@@ -1,4 +1,3 @@
-import logo from "../img/logo.png";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
@@ -9,7 +8,7 @@ const Header = () => {
     <div className="HeaderContainer" style={HeaderContainerStyle}>
       <div imgContainer style={ImgContainerStyle}>
         <img
-          src={logo}
+          src={"/img/logo.png"}
           style={{
             width: "150%",
             aspectRatio: "1/2",

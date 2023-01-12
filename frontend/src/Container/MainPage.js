@@ -1,28 +1,25 @@
-import ModelImage from "../img/model.png";
-import TopImg_1 from "../img/top_1.png";
-import TopImg_2 from "../img/top_2.png";
-import BottomImg_1 from "../img/bottom_1.png";
-import BottomImg_2 from "../img/bottom_2.png";
-
 import AddShoppingCartSharpIcon from "@mui/icons-material/AddShoppingCartSharp";
 import FavoriteBorderTwoToneIcon from "@mui/icons-material/FavoriteBorderTwoTone";
 import "../css/button.css";
 import "../css/img.css";
+import { useState } from "react";
+
 const MainPage = () => {
+  const bottom_imgs = ["bottom_1.png", "bottom_2.png"];
+  const top_imgs = ["top_1.png", "top_2.png"];
   return (
     <div className="MainPageContainer" style={MainPageContainerSyle}>
       <div className="ChangingRoom" style={ChangingRoomStyle}>
         <div className="ClosetBottom" style={ClosetStyle}>
-          <div style={ItemStyle}>
-            <img src={BottomImg_1} className="ImgStyle" />
-          </div>
-          <div style={ItemStyle}>
-            <img src={BottomImg_2} className="ImgStyle" />
-          </div>
+          {bottom_imgs.map((img) => (
+            <button className="ItemButton" onClick={() => console.log(123)}>
+              <img src={`/img/bottom/${img}`} className="ImgStyle" />
+            </button>
+          ))}
         </div>
         <div className="modle" style={ModelSttyle}>
           <img
-            src={ModelImage}
+            src={"/img/model.png"}
             style={{
               position: "absolute",
               left: "-9999px",
@@ -35,12 +32,11 @@ const MainPage = () => {
           ></img>
         </div>
         <div className="ClosetTop" style={ClosetStyle}>
-          <div style={ItemStyle}>
-            <img src={TopImg_1} className="ImgStyle" />
-          </div>
-          <div style={ItemStyle}>
-            <img src={TopImg_2} className="ImgStyle" />
-          </div>
+          {top_imgs.map((img) => (
+            <button className="ItemButton" onClick={() => console.log(123)}>
+              <img src={`/img/top/${img}`} className="ImgStyle" />
+            </button>
+          ))}
         </div>
       </div>
       <div className="UserInfo" style={UserInfoStyle}>
@@ -90,14 +86,9 @@ const ClosetStyle = {
   borderRadius: "15px",
   display: "flex",
   flexWrap: "wrap",
+  gap: "20px",
   padding: "5px",
   background: "#fff8eb",
-};
-
-const ItemStyle = {
-  width: "30%",
-  height: "20%",
-  margin: "10px",
 };
 
 const ModelSttyle = {
