@@ -5,35 +5,48 @@ import "../css/img.css";
 import { useState } from "react";
 
 const MainPage = () => {
-  const bottom_imgs = ["bottom_1.png", "bottom_2.png"];
-  const top_imgs = ["top_1.png", "top_2.png"];
+  const bottom_imgs = ["bottom_2.png"];
+  const top_imgs = [];
+  const [model_img, setModelImg] = useState("model.png");
+  const changeCloth = (img) => {
+    if (img == model_img) setModelImg("model.png");
+    else setModelImg(img);
+  };
   return (
     <div className="MainPageContainer" style={MainPageContainerSyle}>
       <div className="ChangingRoom" style={ChangingRoomStyle}>
         <div className="ClosetBottom" style={ClosetStyle}>
-          {bottom_imgs.map((img) => (
-            <button className="ItemButton" onClick={() => console.log(123)}>
+          {bottom_imgs.map((img, i) => (
+            <button
+              className="ItemButton"
+              onClick={() => changeCloth(img)}
+              key={i}
+            >
               <img src={`/img/bottom/${img}`} className="ImgStyle" />
             </button>
           ))}
         </div>
         <div className="modle" style={ModelSttyle}>
           <img
-            src={"/img/model.png"}
+            src={`/img/change/${model_img}`}
             style={{
               position: "absolute",
               left: "-9999px",
               right: "-9999px",
               top: "-9999px",
               bottom: "-9999px",
-              width: "80%",
+              width: "150%",
               margin: "auto",
             }}
           ></img>
         </div>
         <div className="ClosetTop" style={ClosetStyle}>
-          {top_imgs.map((img) => (
-            <button className="ItemButton" onClick={() => console.log(123)}>
+          {top_imgs.map((img, i) => (
+            <button
+              className="ItemButton"
+              onClick={() => changeCloth(img)}
+              key={i}
+            >
               <img src={`/img/top/${img}`} className="ImgStyle" />
             </button>
           ))}

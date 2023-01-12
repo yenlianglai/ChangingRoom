@@ -6,7 +6,7 @@ import "../css/button.css";
 const Header = () => {
   return (
     <div className="HeaderContainer" style={HeaderContainerStyle}>
-      <div imgContainer style={ImgContainerStyle}>
+      <div className="imgContainer" style={ImgContainerStyle}>
         <img
           src={"/img/logo.png"}
           style={{
