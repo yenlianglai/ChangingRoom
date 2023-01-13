@@ -2,16 +2,28 @@ import AddShoppingCartSharpIcon from "@mui/icons-material/AddShoppingCartSharp";
 import FavoriteBorderTwoToneIcon from "@mui/icons-material/FavoriteBorderTwoTone";
 import "../css/button.css";
 import "../css/img.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MainPage = () => {
-  const bottom_imgs = ["bottom_2.png"];
-  const top_imgs = [];
+  const bottom_imgs = ["bottom_1.png", "bottom_2.png", "bottom_3.png"];
+  const top_imgs = ["top_1.png", "top_2.png", "top_3.png", "top_4.png"];
   const [model_img, setModelImg] = useState("model.png");
   const changeCloth = (img) => {
-    if (img == model_img) setModelImg("model.png");
-    else setModelImg(img);
+    const ele = document.getElementById(model_img);
+    if (ele) ele.style.border = "black solid 1.5px";
+    if (img == model_img) {
+      setModelImg("model.png");
+    } else {
+      setModelImg(img);
+    }
   };
+
+  useEffect(() => {
+    const ele = document.getElementById(model_img);
+    if (ele) {
+      ele.style.border = "green solid 5px";
+    }
+  }, [model_img]);
   return (
     <div className="MainPageContainer" style={MainPageContainerSyle}>
       <div className="ChangingRoom" style={ChangingRoomStyle}>
@@ -19,6 +31,7 @@ const MainPage = () => {
           {bottom_imgs.map((img, i) => (
             <button
               className="ItemButton"
+              id={img}
               onClick={() => changeCloth(img)}
               key={i}
             >
@@ -44,6 +57,7 @@ const MainPage = () => {
           {top_imgs.map((img, i) => (
             <button
               className="ItemButton"
+              id={img}
               onClick={() => changeCloth(img)}
               key={i}
             >
@@ -53,8 +67,8 @@ const MainPage = () => {
         </div>
       </div>
       <div className="UserInfo" style={UserInfoStyle}>
-        <p>您的推薦尺寸為 M (170cm / 60kg)</p>
-        <a style={{ color: "skyblue", cursor: "pointer" }}>我的資訊</a>
+        <p>您的推薦尺寸為 L (175cm / 60kg)</p>
+        <a style={{ color: "blue", cursor: "pointer" }}>我的資訊</a>
       </div>
 
       <div className="ItemFunction" style={ItemFunctionStyle}>
