@@ -11,6 +11,7 @@ const MainPage = ({ width }) => {
     justifyContent: "center",
     borderTop: "#0A0A0A solid 2px",
     marginTop: "15px",
+    marginBottom: width > 900 ? "100px" : "30px",
     gap: "20px",
   };
 
@@ -21,12 +22,12 @@ const MainPage = ({ width }) => {
     justifyContent: "center",
     alignItems: "center",
     gap: width > 900 ? "50px" : "10px",
-    paddingTop: "100px",
+    paddingTop: width > 900 ? "100px" : "30px",
   };
 
   const ClosetStyle = {
-    width: width > 900 ? "20%" : "80%",
-    height: width > 900 ? "50vh" : "20vh",
+    width: width > 900 ? "25%" : "80%",
+    height: width > 900 ? "60vh" : "20vh",
     border: "#0A0A0A solid 3px",
     borderRadius: "15px",
     display: "flex",
@@ -40,8 +41,8 @@ const MainPage = ({ width }) => {
   const ModelSttyle = {
     position: "relative",
     overflow: "hidden",
-    width: width > 900 ? "15%" : "30%",
-    height: width > 900 ? "50vh" : "30vh",
+    width: width > 900 ? "20%" : "35%",
+    height: width > 900 ? "60vh" : "60vh",
     padding: "5px",
     border: "#0A0A0A solid 2px",
     borderRadius: "15px",
@@ -138,10 +139,6 @@ const MainPage = ({ width }) => {
         </button>
         <button className="Button">直接購買</button>
       </div>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
     </div>
   );
 };
